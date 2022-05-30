@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript Countdown</title>
+</head>
+<style>
+	body {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		background: navy;
+		color: #fff;
+		text-align: center;
+	}
+	.time-container {
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		border:  3px solid #fff;
+		margin: 0 auto;
+		text-align: center;
+	}
+	p {
+		margin-top: calc(100% - 70%);
+		/*margin-left:  2.2rem;*/
+		font-size: 3rem;
+		font-weight: bold;
+	}
+</style>
+<body>
+	<h2>CountDown to Tomorrow!</h2>
+	<div class="time-container">
+		<p id="display"></p>
+	</div>
+	<script>
+		setInterval(countDown, 1000)
+
+		function countDown(){
+			let time = new Date();
+			document.getElementById('display').innerHTML=
+			time.getHours() + ":" +
+			time.getMinutes() + ":" +
+			time.getSeconds() + "<br />" +
+			"Count Down: " + (24 - time.getHours()) +"hrs";
+		}
+	</script>
+</body>
+</html>
