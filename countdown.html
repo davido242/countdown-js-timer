@@ -6,33 +6,65 @@
 	<title>JavaScript Countdown</title>
 </head>
 <style>
-	body {
+	*{
 		box-sizing: border-box;
 		padding: 0;
 		margin: 0;
+	}
+	body {
 		background: navy;
 		color: #fff;
 		text-align: center;
+		min-height: 100vh;
+	}
+	.container-wrap {
+		min-height: 100vh;
+		display: flex;
+		padding-top: 4rem;
+		flex-direction: column;
 	}
 	.time-container {
 		width: 400px;
 		height: 400px;
+		background: linear-gradient(45deg, black, transparent);
 		border-radius: 50%;
 		border:  3px solid #fff;
 		margin: 0 auto;
 		text-align: center;
 	}
+	h2 {
+		margin-bottom: 2rem;
+	}
 	p {
 		margin-top: calc(100% - 70%);
-		/*margin-left:  2.2rem;*/
 		font-size: 3rem;
 		font-weight: bold;
 	}
+	h4{
+		margin-top: 10rem;
+	}
+	@media only screen and (max-width: 768px) {
+	  .time-container {
+	  	width: 260px;
+	  	height: 260px;
+	  	background-color: #b70000;
+	  }
+	 	p {
+		margin-top: calc(100% - 80%);
+		font-size: 2rem;
+	}
+		h4{
+		margin-top: 10rem;
+	}
+ }
 </style>
 <body>
-	<h2>CountDown to Tomorrow!</h2>
-	<div class="time-container">
-		<p id="display"></p>
+	<div class="container-wrap">
+		<h2>CountDown to Tomorrow!</h2>
+		<div class="time-container">
+			<p id="display"></p>
+		</div>
+		<h4>Developed by David, &copy 2022.</h4>
 	</div>
 	<script>
 		setInterval(countDown, 1000)
@@ -42,8 +74,8 @@
 			document.getElementById('display').innerHTML=
 			time.getHours() + ":" +
 			time.getMinutes() + ":" +
-			time.getSeconds() + "<br />" +
-			"Count Down: " + (24 - time.getHours()) +"hrs";
+			time.getSeconds() + "<br /> <hr />" +
+			"Tomorrow is in " + (24 - time.getHours()) +"hrs time!";
 		}
 	</script>
 </body>

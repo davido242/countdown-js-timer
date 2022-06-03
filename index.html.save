@@ -7,8 +7,7 @@
 </head>
 <body>
 
-	<h2>Trying Request Status and thier Codes!</h2>
-	<h3>Some night with a bunch of fucking Gypsies</h3>
+	<h2>Trying Request Status and thier Cods!</h2>
 	<p id="demo"></p>
 
 	<script>
